@@ -17,5 +17,25 @@
         "guzzlehttp/guzzle": "^7.7",
         "symfony/dom-crawler": "^5.4",
         "symfony/css-selector": "^5.4"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Estudo\\Composer\\": "src"
+        }
+    },
+    "classmap": [],
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "phan/phan": "^5.4",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "scripts": {
+    "cs": "phpcs --standard=PSR12 src/",
+    "phan": "phan --allow-polyfill-parser",
+     "check": ["@cs,@phan"]
+    },
+    "scripts-descriptions": {
+        "check": "Roda as verificações do codigo, Code Sniffer e Phan"
     }
 }
